@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Search extends StatelessWidget {
+class AppbarShop extends StatelessWidget {
   //final String title;
-  const Search({Key? key}) : super(key: key);
+  const AppbarShop({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
-          "assets/logo_tk_green.png",
-          width: 50,
-          height: 50,
-        ),
-        SizedBox(
-          width: 20,
-        ),
         SizedBox(
             height: 30,
             width: MediaQuery.of(context).size.width * 0.7,
@@ -35,6 +27,9 @@ class Search extends StatelessWidget {
                       borderSide: BorderSide(
                           color: Colors.white70))),
             )
+        ),
+        SizedBox(
+          width: 20,
         ),
       ],
     );

@@ -29,7 +29,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     fontSize: 24,
                     fontWeight: FontWeight.bold)),
           ),
-          leading: Image.asset("assets/back.png")),
+          leading: Image.asset("assets/back.png")
+      ),
       body: Column(
         children: [
           Image.asset(
