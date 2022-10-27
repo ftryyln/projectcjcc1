@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tk_al_muhajirin/ui/home/splash_screen.dart';
+import 'package:tk_al_muhajirin/ui/login/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen()
+      home: const LoginScreen()
      // home: HomeScreen()
     );
   }
