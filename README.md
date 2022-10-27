@@ -1,16 +1,8 @@
-# tk_al_muhajirin
+# ProjectCJCC
 
-A new Flutter project.
+Demonstrasi implementasi konsep dan desain UI/UX dari projek yang diberikan oleh Pengajar.
 
-## Getting Started
+# Contoh Aplikasi
+Berikut adalah hasil screenshot dari aplikasi yang sudah berjalan.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot aplikasi.](https://github.com/ftryyln/projectcjcc1/blob/master/gitassets/logincap_screen.JPG?raw=true "Screenshot aplikasi.")
