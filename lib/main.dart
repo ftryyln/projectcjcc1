@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tk_al_muhajirin/ui/home/splash_screen.dart';
 import 'package:tk_al_muhajirin/ui/login/login_screen.dart';
-import 'package:tk_al_muhajirin/ui/shop/home_shop.dart';
+import 'package:tk_al_muhajirin/ui/shop/home_shop_screen.dart';
+import 'package:tk_al_muhajirin/ui/shop/list_category_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: const LoginScreen()
-     home: HomeShop()
+     home: ListCategory()
     );
   }
 }
