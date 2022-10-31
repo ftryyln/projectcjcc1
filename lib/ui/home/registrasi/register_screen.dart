@@ -38,10 +38,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             fit: BoxFit.fitWidth,
             width: MediaQuery.of(context).size.width,
           ),
-          // SizedBox(
-          //   height: 100,
-          // ),
-          //IconStepperDemo(), //STEPPER
           Expanded(
             child: SingleChildScrollView(
                 child: Column(children: [

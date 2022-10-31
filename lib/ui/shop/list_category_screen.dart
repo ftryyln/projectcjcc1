@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../theme.dart';
-
 class ListCategory extends StatefulWidget {
   const ListCategory({Key? key}) : super(key: key);
 
@@ -42,21 +40,21 @@ class _ListCategoryState extends State<ListCategory> {
           verticalPadding: 20.0,
           items: <FlipBoxNavigationBarItem>[
             FlipBoxNavigationBarItem(
-              name: 'Profil',
+              name: 'History',
               selectedIcon: Icons.list_alt_outlined,
               unselectedIcon: Icons.list_alt,
               selectedBackgroundColor: Color(0xff1C96F9),
               unselectedBackgroundColor: Colors.white,
             ),
             FlipBoxNavigationBarItem(
-              name: 'Galeri',
+              name: 'Home',
               selectedIcon: Icons.home_max_outlined,
               unselectedIcon: Icons.home_rounded,
               selectedBackgroundColor: Color(0xff46AD4C),
               unselectedBackgroundColor: Colors.white,
             ),
             FlipBoxNavigationBarItem(
-              name: 'Shop',
+              name: 'Cart',
               selectedIcon: Icons.shopping_cart_outlined,
               unselectedIcon: Icons.shopping_cart,
               selectedBackgroundColor: Color(0xffF82F40),
@@ -101,7 +99,9 @@ class _ListCategoryState extends State<ListCategory> {
                             image: DecorationImage(
                                 fit: BoxFit.fitWidth,
                                 image:
-                                AssetImage("assets/shop/category_book.jpg"))),
+                                AssetImage("assets/shop/category_book.jpg")
+                            )
+                        ),
                         //width: MediaQuery.of(context).size.width,
                       ),
                     ),
@@ -112,7 +112,7 @@ class _ListCategoryState extends State<ListCategory> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Backpack",
+                          "Buku Tulis",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white,
@@ -123,7 +123,7 @@ class _ListCategoryState extends State<ListCategory> {
                           height: 8,
                         ),
                         Text(
-                          "Backpack",
+                          "Sinar Dunia",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white, fontSize: 16)),
@@ -211,7 +211,7 @@ class _ListCategoryState extends State<ListCategory> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Backpack",
+                          "Buku Tulis",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white,
@@ -222,7 +222,7 @@ class _ListCategoryState extends State<ListCategory> {
                           height: 8,
                         ),
                         Text(
-                          "Backpack",
+                          "Sinar Dunia",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white, fontSize: 16)),
@@ -310,7 +310,7 @@ class _ListCategoryState extends State<ListCategory> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Backpack",
+                          "Buku Tulis",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white,
@@ -321,7 +321,7 @@ class _ListCategoryState extends State<ListCategory> {
                           height: 8,
                         ),
                         Text(
-                          "Backpack",
+                          "Sinar Dunia",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white, fontSize: 16)),
@@ -409,7 +409,7 @@ class _ListCategoryState extends State<ListCategory> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Backpack",
+                          "Buku Tulis",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white,
@@ -420,7 +420,7 @@ class _ListCategoryState extends State<ListCategory> {
                           height: 8,
                         ),
                         Text(
-                          "Backpack",
+                          "Sinar Dunia",
                           style: GoogleFonts.beVietnamPro(
                               textStyle: const TextStyle(
                                   color: Colors.white, fontSize: 16)),
@@ -474,7 +474,7 @@ class _ListCategoryState extends State<ListCategory> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

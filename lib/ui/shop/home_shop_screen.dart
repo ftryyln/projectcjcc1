@@ -40,21 +40,21 @@ class _HomeShopState extends State<HomeShop> {
             verticalPadding: 20.0,
             items: <FlipBoxNavigationBarItem>[
               FlipBoxNavigationBarItem(
-                name: 'Profil',
+                name: 'History',
                 selectedIcon: Icons.list_alt_outlined,
                 unselectedIcon: Icons.list_alt,
                 selectedBackgroundColor: Color(0xff1C96F9),
                 unselectedBackgroundColor: Colors.white,
               ),
               FlipBoxNavigationBarItem(
-                name: 'Galeri',
+                name: 'Home',
                 selectedIcon: Icons.home_max_outlined,
                 unselectedIcon: Icons.home_rounded,
                 selectedBackgroundColor: Color(0xff46AD4C),
                 unselectedBackgroundColor: Colors.white,
               ),
               FlipBoxNavigationBarItem(
-                name: 'Shop',
+                name: 'Cart',
                 selectedIcon: Icons.shopping_cart_outlined,
                 unselectedIcon: Icons.shopping_cart,
                 selectedBackgroundColor: Color(0xffF82F40),
