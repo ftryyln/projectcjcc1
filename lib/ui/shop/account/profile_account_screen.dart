@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tk_al_muhajirin/ui/home/home_screen.dart';
+import 'package:tk_al_muhajirin/ui/shop/account/info_acc_screen.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfileAccountScreen extends StatefulWidget {
+  const ProfileAccountScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<ProfileAccountScreen> createState() => _ProfileAccountScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileAccountScreenState extends State<ProfileAccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     fontSize: 24,
                     fontWeight: FontWeight.bold)),
           ),
-          leading: Image.asset("assets/shop/icon_back.png")),
+          leading: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset("assets/shop/icon_back.png"))),
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -67,13 +71,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     elevation: 4,
                     shadowColor: const Color(0xFF003D86),
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Colors.black,
-                            width: 2
-                        ),
+                        side: BorderSide(color: Colors.black, width: 2),
                         borderRadius: BorderRadius.circular(25)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => InfoAccScreen()));
+                  },
                   child: Text(
                     "Ubah",
                     style: GoogleFonts.beVietnamPro(
@@ -85,13 +91,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: 10,
               ),
-              Text(
-                "Logout",
-                style: GoogleFonts.beVietnamPro(
-                    textStyle: const TextStyle(
-                        color: Colors.red,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
+                child: Text(
+                  "Logout",
+                  style: GoogleFonts.beVietnamPro(
+                      textStyle: const TextStyle(
+                          color: Colors.red,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold)),
+                ),
               ),
             ],
           ),

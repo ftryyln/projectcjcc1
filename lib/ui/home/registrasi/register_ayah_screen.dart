@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tk_al_muhajirin/const/lego_button.dart';
+import 'package:tk_al_muhajirin/ui/home/registrasi/register_ibu_screen.dart';
 
-class RegisterAyah extends StatefulWidget {
-  const RegisterAyah({Key? key}) : super(key: key);
+class RegisterAyahScreen extends StatefulWidget {
+  const RegisterAyahScreen({Key? key}) : super(key: key);
 
   @override
-  State<RegisterAyah> createState() => _RegisterAyahState();
+  State<RegisterAyahScreen> createState() => _RegisterAyahScreenState();
 }
 
-class _RegisterAyahState extends State<RegisterAyah> {
+class _RegisterAyahScreenState extends State<RegisterAyahScreen> {
   int currentIndex = 0;
 
   @override
@@ -275,13 +276,25 @@ class _RegisterAyahState extends State<RegisterAyah> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            LegoBack(
-                                button: "assets/registrasi/yellow_lego_next.png",
-                                textButton: "Back"),
-                            LegoNext(
-                                button:
-                                    "assets/registrasi/red_lego_next.png",
-                                textButton: "Next"),
+                            GestureDetector(
+                              onTap: () => Navigator.pop(context),
+                              child: LegoBack(
+                                  button: "assets/registrasi/yellow_lego_next.png",
+                                  textButton: "Back"),
+                            ),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            RegisterIbuScreen()));
+                              },
+                              child: LegoNext(
+                                  button:
+                                      "assets/registrasi/red_lego_next.png",
+                                  textButton: "Next"),
+                            ),
                           ],
                         ),
                       ],

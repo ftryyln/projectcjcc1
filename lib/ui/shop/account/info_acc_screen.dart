@@ -28,8 +28,11 @@ class _InfoAccScreenState extends State<InfoAccScreen> {
           ),
           leading: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: SvgPicture.asset(
-              "assets/shop/account/icon_close.svg",
+            child: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: SvgPicture.asset(
+                "assets/shop/account/icon_close.svg",
+              ),
             ),
           )),
       body: Stack(children: [

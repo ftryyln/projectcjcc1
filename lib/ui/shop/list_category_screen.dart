@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ListCategory extends StatefulWidget {
-  const ListCategory({Key? key}) : super(key: key);
+class ListCategoryScreen extends StatefulWidget {
+  const ListCategoryScreen({Key? key}) : super(key: key);
 
   @override
-  State<ListCategory> createState() => _ListCategoryState();
+  State<ListCategoryScreen> createState() => _ListCategoryScreenState();
 }
 
-class _ListCategoryState extends State<ListCategory> {
+class _ListCategoryScreenState extends State<ListCategoryScreen> {
   int currentIndex = 0;
 
   @override

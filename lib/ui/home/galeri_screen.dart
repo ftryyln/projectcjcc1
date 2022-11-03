@@ -86,10 +86,14 @@ class _GaleriState extends State<Galeri> {
                     padding: const EdgeInsets.all(3.0),
                     child: GestureDetector(
                         child: PhotoHero(
-                          tag: index.toString(),
+                      tag: index.toString(),
                       photo: galeri[index],
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailGaleriScreen(tag:index.toString())));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    DetailGaleriScreen(tag: index.toString())));
                       },
                     )),
                   );

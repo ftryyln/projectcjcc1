@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DaftarPesanan extends StatefulWidget {
-  const DaftarPesanan({Key? key}) : super(key: key);
+class DaftarPesananScreen extends StatefulWidget {
+  const DaftarPesananScreen({Key? key}) : super(key: key);
 
   @override
-  State<DaftarPesanan> createState() => _DaftarPesananState();
+  State<DaftarPesananScreen> createState() => _DaftarPesananScreenState();
 }
 
-class _DaftarPesananState extends State<DaftarPesanan> {
+class _DaftarPesananScreenState extends State<DaftarPesananScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff44A7AD),
       appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          centerTitle: true,
-          title: Text(
-            "Daftar Pesanan",
-            style: GoogleFonts.beVietnamPro(
-                textStyle: const TextStyle(
-                    color: Color(0xff46AD4C),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold)),
-          ),
-          leading: Image.asset("assets/back.png")),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+          "Daftar Pesanan",
+          style: GoogleFonts.beVietnamPro(
+              textStyle: const TextStyle(
+                  color: Color(0xff46AD4C),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold)),
+        )
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -111,7 +111,8 @@ class _DaftarPesananState extends State<DaftarPesanan> {
                                       "Total Pesanan",
                                       style: GoogleFonts.beVietnamPro(
                                           textStyle: const TextStyle(
-                                              color: Color(0xff44A7AD), fontSize: 16)),
+                                              color: Color(0xff44A7AD),
+                                              fontSize: 16)),
                                     ),
                                     Text(
                                       "Rp. 45.000",

@@ -28,7 +28,7 @@ class _DetailGaleriScreenState extends State<DetailGaleriScreen> {
                     fontWeight: FontWeight.bold)),
           ),
           leading: GestureDetector(
-            onTap: ()=>Navigator.pop(context),
+              onTap: () => Navigator.pop(context),
               child: Image.asset("assets/back.png"))),
       body: Column(
         children: [
@@ -47,47 +47,46 @@ class _DetailGaleriScreenState extends State<DetailGaleriScreen> {
                 height: 420,
                 width: 360,
                 color: Colors.white,
-               child: Padding(
-                 padding: const EdgeInsets.all(8.0),
-                 child: Column(
-                   children: [
-                     Hero(
-                       tag: widget.tag,
-                       child: Image.asset(
-                         "assets/galeri/0.jpg",
-                         fit: BoxFit.fitWidth,
-                         width: MediaQuery.of(context).size.width,
-                       ),
-                     ),
-                     SizedBox(
-                       height: 20,
-                     ),
-                     Text(
-                       "Kegiatan Siswa Belajar di Kelas",
-                       style: GoogleFonts.beVietnamPro(
-                           textStyle: const TextStyle(
-                               color: Colors.black,
-                               fontSize: 18,
-                               fontWeight: FontWeight.bold)),
-                     ),
-                     SizedBox(
-                       height: 10,
-                     ),
-                     Container(
-                       alignment: Alignment.topLeft,
-                       child: Text(
-                         "Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.",
-                         textAlign: TextAlign.justify,
-                         maxLines: 6,
-                         style: GoogleFonts.beVietnamPro(
-                             textStyle: const TextStyle(
-                                 color: Colors.black,
-                                 fontSize: 14)),
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: widget.tag,
+                        child: Image.asset(
+                          "assets/galeri/0.jpg",
+                          fit: BoxFit.fitWidth,
+                          width: MediaQuery.of(context).size.width,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Kegiatan Siswa Belajar di Kelas",
+                        style: GoogleFonts.beVietnamPro(
+                            textStyle: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold)),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.",
+                          textAlign: TextAlign.justify,
+                          maxLines: 6,
+                          style: GoogleFonts.beVietnamPro(
+                              textStyle: const TextStyle(
+                                  color: Colors.black, fontSize: 14)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ]),
           ),

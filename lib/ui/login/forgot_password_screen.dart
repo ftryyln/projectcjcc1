@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tk_al_muhajirin/const/theme.dart';
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+class ForgotPasswordScreen extends StatefulWidget {
+  const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
-  State<ForgotPassword> createState() => _ForgotPasswordState();
+  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   int currentIndex = 0;
   bool isObscure = true;
   bool isObscure1 = true;
@@ -33,7 +33,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     fontSize: 24,
                     fontWeight: FontWeight.bold)),
           ),
-          leading: Image.asset("assets/back.png")),
+          leading: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset("assets/back.png"))),
       body: SafeArea(
         child: Column(
           children: [
@@ -163,8 +165,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         width: 100,
                         height: 50,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xff308612)),borderRadius: BorderRadius.circular(14)
-                        ),
+                            border: Border.all(color: Color(0xff308612)),
+                            borderRadius: BorderRadius.circular(14)),
                         child: TextButton(
                           onPressed: () {},
                           style: TextButton.styleFrom(

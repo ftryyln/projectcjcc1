@@ -3,14 +3,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tk_al_muhajirin/const/lego_button.dart';
 
-class RegisterIbu extends StatefulWidget {
-  const RegisterIbu({Key? key}) : super(key: key);
+class RegisterIbuScreen extends StatefulWidget {
+  const RegisterIbuScreen({Key? key}) : super(key: key);
 
   @override
-  State<RegisterIbu> createState() => _RegisterIbuState();
+  State<RegisterIbuScreen> createState() => _RegisterIbuScreenState();
 }
 
-class _RegisterIbuState extends State<RegisterIbu> {
+class _RegisterIbuScreenState extends State<RegisterIbuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -273,13 +273,25 @@ class _RegisterIbuState extends State<RegisterIbu> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                LegoBack(
-                                    button: "assets/registrasi/blue_lego_back.png",
-                                    textButton: "Back"),
-                                LegoNext(
-                                    button:
-                                    "assets/registrasi/green_lego_send.png",
-                                    textButton: "Daftar"),
+                                GestureDetector(
+                                  onTap: () => Navigator.pop(context),
+                                  child: LegoBack(
+                                      button: "assets/registrasi/blue_lego_back.png",
+                                      textButton: "Back"),
+                                ),
+                                GestureDetector(
+                                    /*onTap: (){
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  RegisterIbuScreen()));
+                                    },*/
+                                    child: LegoNext(
+                                      button:
+                                      "assets/registrasi/green_lego_send.png",
+                                      textButton: "Daftar"),
+                                ),
                               ],
                             ),
                           ],

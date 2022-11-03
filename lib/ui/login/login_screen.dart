@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tk_al_muhajirin/ui/login/forgot_password_screen.dart';
+import 'package:tk_al_muhajirin/ui/shop/home_shop_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -161,8 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               });
                             },
                             child: Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Padding(
                                   padding: EdgeInsets.zero,
@@ -189,7 +190,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ForgotPasswordScreen()));
+                            },
                             child: Text('Lupa Password ?',
                                 style: GoogleFonts.beVietnamPro(
                                   textStyle: TextStyle(
@@ -210,10 +217,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 100,
                         height: 50,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xff308612)),borderRadius: BorderRadius.circular(14)
-                        ),
+                            border: Border.all(color: Color(0xff308612)),
+                            borderRadius: BorderRadius.circular(14)),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeShopScreen()));
+                          },
                           style: TextButton.styleFrom(
                             backgroundColor: Color(0xff46AD4C),
                             shape: RoundedRectangleBorder(

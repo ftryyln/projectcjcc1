@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:tk_al_muhajirin/const/lego_button.dart';
+import 'package:tk_al_muhajirin/ui/home/registrasi/register_ayah_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -26,8 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     } else {
       _selectedItems.remove(itemValue);
     }
-    setState(() {
-    });
+    setState(() {});
   }
 
   // this function is called when the Cancel button is pressed
@@ -56,7 +56,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     fontSize: 24,
                     fontWeight: FontWeight.bold)),
           ),
-          leading: Image.asset("assets/back.png")),
+          leading: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset("assets/back.png"))),
       body: Column(
         children: [
           Image.asset(
@@ -393,7 +395,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     ),
                                     Text("Kelas Reguler",
                                         style:
-                                        GoogleFonts.beVietnamPro().copyWith(
+                                            GoogleFonts.beVietnamPro().copyWith(
                                           color: Colors.black,
                                           fontSize: 14,
                                         )),
@@ -408,30 +410,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       title:
                                           const Text("Kelas Ekstrakulikuler"),
                                       content: StatefulBuilder(
-                                        builder: (context, setStateDialog) {
-                                          return SingleChildScrollView(
-                                            child: ListBody(
-                                              children: ["Berkuda", "Futsal"]
-                                                  .map((item) => CheckboxListTile(
-                                                        value: _selectedItems
-                                                            .contains(item),
-                                                        title: Text(item),
-                                                        controlAffinity:
-                                                            ListTileControlAffinity
-                                                                .leading,
-                                                        onChanged: (isChecked) {
-                                                          _itemChange(
-                                                              item, isChecked!);
-                                                          setStateDialog(() {
-                                                            print(_selectedItems.toString());
-                                                          });
-                                                        }
-                                                      ))
-                                                  .toList(),
-                                            ),
-                                          );
-                                        }
-                                      ),
+                                          builder: (context, setStateDialog) {
+                                        return SingleChildScrollView(
+                                          child: ListBody(
+                                            children: ["Berkuda", "Futsal"]
+                                                .map((item) => CheckboxListTile(
+                                                    value: _selectedItems
+                                                        .contains(item),
+                                                    title: Text(item),
+                                                    controlAffinity:
+                                                        ListTileControlAffinity
+                                                            .leading,
+                                                    onChanged: (isChecked) {
+                                                      _itemChange(
+                                                          item, isChecked!);
+                                                      setStateDialog(() {
+                                                        print(_selectedItems
+                                                            .toString());
+                                                      });
+                                                    }))
+                                                .toList(),
+                                          ),
+                                        );
+                                      }),
                                       actions: [
                                         TextButton(
                                           onPressed: _cancel,
@@ -451,7 +452,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       value: isCheckedEkstrakulikuler,
                                       onChanged: (bool? value) {
                                         setState(() {
-                                          isCheckedEkstrakulikuler = !isCheckedEkstrakulikuler;
+                                          isCheckedEkstrakulikuler =
+                                              !isCheckedEkstrakulikuler;
                                         });
                                       },
                                     ),
@@ -503,10 +505,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            LegoNext(
-                                button:
-                                    "assets/registrasi/yellow_lego_next.png",
-                                textButton: "Next"),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            RegisterAyahScreen()));
+                              },
+                              child: LegoNext(
+                                  button:
+                                      "assets/registrasi/yellow_lego_next.png",
+                                  textButton: "Next"),
+                            ),
                           ],
                         ),
                       ],
