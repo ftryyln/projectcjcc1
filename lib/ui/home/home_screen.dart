@@ -1,8 +1,14 @@
+import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cool_nav/cool_nav.dart';
-import 'package:tk_al_muhajirin/ui/top.dart';
+import 'package:tk_al_muhajirin/const/top.dart';
+import 'package:tk_al_muhajirin/ui/home/galeri_screen.dart';
+import 'package:tk_al_muhajirin/ui/home/profil_screen.dart';
+import 'package:tk_al_muhajirin/ui/home/registrasi/register_screen.dart';
+import 'package:tk_al_muhajirin/ui/login/login_screen.dart';
+import 'package:tk_al_muhajirin/ui/shop/home_shop_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,6 +19,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
+  int indexBottomNav = 0;
+
+  List<String> sliderHome = [
+    'assets/tk.jpg',
+    'assets/taman_bermain.jpg',
+    'assets/kelas.jpg'
+  ];
+
   List<String> titleEkskul = [
     'Berkuda',
     'Futsal',
@@ -27,44 +41,24 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   int currentIndexFasilitas = 0;
+  List<String> sliderFasilitas = [
+  'assets/taman_bermain.jpg',
+  'assets/lapangan_futsal.jpg',
+  'assets/computer_room.jpg',
+  ];
+
   List<String> fasilitas = [
     'Taman Bermain',
     'Lapangan Futsal',
     'Computer Room',
   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: FlipBoxNavigationBar(
-          currentIndex: currentIndex,
-
-          verticalPadding: 20.0,
-          items: <FlipBoxNavigationBarItem>[
-            FlipBoxNavigationBarItem(
-              name: 'Profil',
-              selectedIcon: Icons.info_outline,
-              unselectedIcon: Icons.info,
-              selectedBackgroundColor: Color(0xff1C96F9),
-              unselectedBackgroundColor: Colors.white,
-            ),
-            FlipBoxNavigationBarItem(
-              name: 'Galeri',
-              selectedIcon: Icons.photo_library_outlined,
-              unselectedIcon: Icons.photo_library,
-              selectedBackgroundColor: Color(0xff46AD4C),
-              unselectedBackgroundColor: Colors.white,
-            ),
-            FlipBoxNavigationBarItem(
-              name: 'Shop',
-              selectedIcon: Icons.shopping_bag_outlined,
-              unselectedIcon: Icons.shopping_bag,
-              selectedBackgroundColor: Color(0xffF82F40),
-              unselectedBackgroundColor: Colors.white,
-            ),
-          ]
-      ),
-      body: SingleChildScrollView(
+  Widget selectedHomePage() {
+    switch(indexBottomNav) {
+      case 1: return ProfilScreen();
+      case 2: return Galeri();
+      case 3: return LoginScreen();
+      default: return SingleChildScrollView(
         child: Column(
           children: [
             Stack(
@@ -113,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "belajar secara menyenangkan.",
                                 style: GoogleFonts.beVietnamPro(
                                     textStyle:
-                                        const TextStyle(color: Colors.white))),
+                                    const TextStyle(color: Colors.white))),
                             Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15)),
@@ -128,9 +122,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                     shadowColor: const Color(0xFF003D86),
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(15)),
+                                        BorderRadius.circular(15)),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                RegisterScreen()));
+                                  },
                                   child: Text(
                                     "Pendaftaran Siswa Baru",
                                     style: GoogleFonts.beVietnamPro(
@@ -153,11 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: CarouselSlider(
                 options: CarouselOptions(
                     height: 200.0, autoPlay: true, viewportFraction: 1),
-                items: [
-                  'assets/tk.jpg',
-                  'assets/taman_bermain.jpg',
-                  'assets/kelas.jpg'
-                ].map((i) {
+                items: sliderHome.map((i) {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
@@ -175,6 +171,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 }).toList(),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            CarouselIndicator(
+              count: sliderHome.length,
+              index: currentIndex,
+              color: Colors.grey,
+              activeColor: Color(0xff1C96F9),
             ),
             Container(
               margin: const EdgeInsets.only(top: 20),
@@ -197,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.beVietnamPro(
                         textStyle:
-                            const TextStyle(color: Colors.black, fontSize: 16)),
+                        const TextStyle(color: Colors.black, fontSize: 16)),
                   )
                 ],
               ),
@@ -220,12 +225,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: GoogleFonts.beVietnamPro(
                             textStyle: TextStyle(
                                 shadows: [
-                              Shadow(
-                                offset: const Offset(0, 4),
-                                color: Colors.black.withOpacity(0.25),
-                                blurRadius: 4,
-                              ),
-                            ],
+                                  Shadow(
+                                    offset: const Offset(0, 4),
+                                    color: Colors.black.withOpacity(0.25),
+                                    blurRadius: 4,
+                                  ),
+                                ],
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold))),
@@ -348,18 +353,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                         builder: (BuildContext context) {
                                           return Container(
                                             height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
+                                                .size
+                                                .height *
                                                 0.238,
                                             width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
+                                                .size
+                                                .width *
                                                 0.8,
                                             margin: const EdgeInsets.symmetric(
                                                 horizontal: 5.0),
                                             child: ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                              BorderRadius.circular(5),
                                               child: Image.asset(
                                                 i,
                                                 //height: 200,
@@ -454,7 +459,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           CarouselSlider(
                             options: CarouselOptions(
-                                height: 200.0,
+                                height: 180.0,
                                 autoPlay: true,
                                 onPageChanged: (indexF, reason) {
                                   setState(() {
@@ -462,27 +467,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                   });
                                 },
                                 viewportFraction: 1),
-                            items: [
-                              'assets/taman_bermain.jpg',
-                              'assets/lapangan_futsal.jpg',
-                              'assets/computer_room.jpg',
-                            ].map((i) {
+                            items: sliderFasilitas.map((i) {
                               return Builder(
                                 builder: (BuildContext context) {
                                   return Container(
-                                    height: MediaQuery.of(context)
-                                        .size
-                                        .height *
+                                    height: MediaQuery.of(context).size.height *
                                         0.238,
-                                    width: MediaQuery.of(context)
-                                        .size
-                                        .width *
-                                        0.8,
+                                    width:
+                                    MediaQuery.of(context).size.width * 0.8,
                                     margin: const EdgeInsets.symmetric(
                                         horizontal: 5.0),
                                     child: ClipRRect(
-                                      borderRadius:
-                                      BorderRadius.circular(5),
+                                      borderRadius: BorderRadius.circular(5),
                                       child: Image.asset(
                                         i,
                                         //height: 200,
@@ -494,13 +490,22 @@ class _HomeScreenState extends State<HomeScreen> {
                               );
                             }).toList(),
                           ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          CarouselIndicator(
+                            count: sliderHome.length,
+                            index: currentIndexFasilitas,
+                            color: Colors.white,
+                            activeColor: Color(0xff1C96F9),
+                          ),
                           Container(
                             margin: const EdgeInsets.only(top: 15),
-                            padding: const EdgeInsets.only(
-                                left: 16, right: 16),
+                            padding: const EdgeInsets.only(left: 16, right: 16),
                             alignment: Alignment.centerLeft,
                             child: Center(
-                              child: Text(fasilitas[currentIndex],
+                              child: Text(
+                                fasilitas[currentIndex],
                                 style: GoogleFonts.beVietnamPro(
                                   textStyle: TextStyle(
                                       shadows: [
@@ -513,7 +518,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Colors.white,
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
-                                ),),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -528,7 +534,63 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-      ),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: FlipBoxNavigationBar(
+          currentIndex: indexBottomNav,
+          selectedItemTheme: IconThemeData(
+            color: Colors.white,
+            size: 35
+          ),
+          textStyle: TextStyle(
+            color: Colors.white
+          ),
+          unselectedItemTheme: IconThemeData(
+            color: Color(0xff1C96F9),
+            size: 35
+          ),
+          verticalPadding: 20.0,
+          onTap: (index) {
+            setState(() {
+              indexBottomNav = index;
+            });
+          },
+          items: <FlipBoxNavigationBarItem>[
+            FlipBoxNavigationBarItem(
+              name: '',
+              selectedIcon: Icons.home_outlined,
+              unselectedIcon: Icons.home_rounded,
+              selectedBackgroundColor: Color(0xff46AD4C),
+              unselectedBackgroundColor: Colors.white,
+            ),
+            FlipBoxNavigationBarItem(
+              name: '',
+              selectedIcon: Icons.info_outline,
+              unselectedIcon: Icons.info,
+              selectedBackgroundColor: Color(0xff1C96F9),
+              unselectedBackgroundColor: Colors.white,
+            ),
+            FlipBoxNavigationBarItem(
+              name: '',
+              selectedIcon: Icons.photo_library_outlined,
+              unselectedIcon: Icons.photo_library,
+              selectedBackgroundColor: Color(0xff46AD4C),
+              unselectedBackgroundColor: Colors.white,
+            ),
+            FlipBoxNavigationBarItem(
+              name: '',
+              selectedIcon: Icons.shopping_bag_outlined,
+              unselectedIcon: Icons.shopping_bag,
+              selectedBackgroundColor: Color(0xffF82F40),
+              unselectedBackgroundColor: Colors.white,
+            ),
+          ]),
+      body: selectedHomePage(),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tk_al_muhajirin/ui/theme.dart';
 
 class TextBox extends StatelessWidget {
   final String? title;

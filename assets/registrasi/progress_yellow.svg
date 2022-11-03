@@ -1,0 +1,26 @@
+<svg width="360" height="51" viewBox="0 0 360 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 26L360 26" stroke="white" stroke-width="7"/>
+<circle cx="287" cy="26" r="25" fill="white"/>
+<circle cx="75" cy="25" r="25" fill="white"/>
+<circle cx="75" cy="25" r="23" fill="#1C96F9"/>
+<circle cx="181" cy="26" r="25" fill="white"/>
+<circle cx="181" cy="26" r="23" fill="#F8C52D"/>
+<circle cx="287" cy="26" r="23" fill="white"/>
+<rect x="106" y="24" width="128" height="4" rx="2" fill="#F8C52D"/>
+<rect x="2" y="24" width="128" height="4" rx="2" fill="#1C96F9"/>
+<rect x="62.7255" y="14.4414" width="9.27027" height="7.10811" rx="1.5" fill="#8DCAFC" stroke="white"/>
+<rect x="77.3201" y="14.4414" width="9.27027" height="7.10811" rx="1.5" fill="#8DCAFC" stroke="white"/>
+<rect x="58.4417" y="18.9414" width="32" height="15" rx="2" fill="#1C96F9"/>
+<rect x="58.4417" y="19.8872" width="27.027" height="12.973" rx="1" fill="#31A7FB"/>
+<rect x="58.9417" y="19.3062" width="31.4324" height="14.1351" rx="1.5" stroke="white"/>
+<rect x="275.284" y="16.5" width="9.27027" height="7.10811" rx="1.5" fill="#FB8189" stroke="black"/>
+<rect x="289.878" y="16.5" width="9.27027" height="7.10811" rx="1.5" fill="#FB8189" stroke="black"/>
+<rect x="271" y="21" width="32" height="15" rx="2" fill="#F82F40"/>
+<rect x="271" y="21.9458" width="27.027" height="12.973" rx="1" fill="#FB4A59"/>
+<rect x="271.5" y="21.3647" width="31.4324" height="14.1351" rx="1.5" stroke="black"/>
+<rect x="173.25" y="12.9933" width="9.27027" height="7.10811" rx="1.5" transform="rotate(19.99 173.25 12.9933)" fill="#FDE784" stroke="white"/>
+<rect x="186.966" y="17.9826" width="9.27027" height="7.10811" rx="1.5" transform="rotate(19.99 186.966 17.9826)" fill="#FDE784" stroke="white"/>
+<rect x="169.686" y="15.7578" width="32" height="15" rx="2" transform="rotate(19.99 169.686 15.7578)" fill="#F8C52D"/>
+<rect x="167.363" y="16.647" width="27.027" height="12.973" rx="1" transform="rotate(19.99 167.363 16.647)" fill="#FDD330"/>
+<rect x="168.031" y="16.2717" width="31.4324" height="14.1351" rx="1.5" transform="rotate(19.99 168.031 16.2717)" stroke="white"/>
+</svg>

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:im_stepper/main.dart';
-import 'package:tk_al_muhajirin/ui/lego_button.dart';
-import 'package:tk_al_muhajirin/ui/textbox.dart';
+import 'package:tk_al_muhajirin/const/lego_button.dart';
 
 class RegisterAyah extends StatefulWidget {
   const RegisterAyah({Key? key}) : super(key: key);
@@ -38,10 +37,14 @@ class _RegisterAyahState extends State<RegisterAyah> {
             fit: BoxFit.fitWidth,
             width: MediaQuery.of(context).size.width,
           ),
-          // SizedBox(
-          //   height: 100,
-          // ),
-          //IconStepperDemo(), //STEPPER
+          SvgPicture.asset(
+            "assets/registrasi/progress_yellow.svg",
+            fit: BoxFit.fitWidth,
+            width: MediaQuery.of(context).size.width,
+          ),
+          SizedBox(
+            height: 10,
+          ),
           Expanded(
             child: SingleChildScrollView(
                 child: Column(children: [

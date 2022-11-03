@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../lego_button.dart';
+import 'package:tk_al_muhajirin/const/lego_button.dart';
 
 class RegisterIbu extends StatefulWidget {
   const RegisterIbu({Key? key}) : super(key: key);
@@ -35,10 +35,14 @@ class _RegisterIbuState extends State<RegisterIbu> {
             fit: BoxFit.fitWidth,
             width: MediaQuery.of(context).size.width,
           ),
-          // SizedBox(
-          //   height: 100,
-          // ),
-          //IconStepperDemo(), //STEPPER
+          SvgPicture.asset(
+            "assets/registrasi/progress_red.svg",
+            fit: BoxFit.fitWidth,
+            width: MediaQuery.of(context).size.width,
+          ),
+          SizedBox(
+            height: 10,
+          ),
           Expanded(
             child: SingleChildScrollView(
                 child: Column(children: [

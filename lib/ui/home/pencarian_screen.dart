@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cool_nav/cool_nav.dart';
-import '../card_search.dart';
+import '../../const/card_search.dart';
 
 class Pencarian extends StatefulWidget {
   const Pencarian({Key? key}) : super(key: key);

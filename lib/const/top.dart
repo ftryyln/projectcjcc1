@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tk_al_muhajirin/ui/home/home_screen.dart';
 
 class Search extends StatelessWidget {
   //final String title;
@@ -10,10 +11,15 @@ class Search extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
-          "assets/logo_tk_green.png",
-          width: 50,
-          height: 50,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          },
+          child: Image.asset(
+            "assets/logo_tk_green.png",
+            width: 50,
+            height: 50,
+          ),
         ),
         SizedBox(
           width: 20,
