@@ -46,6 +46,7 @@ dependencies:
   im_stepper: ^1.0.1+1
   flutter_svg: ^1.1.6
   intl: ^0.17.0
+  webview_flutter: ^3.0.4
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tk_al_muhajirin/const/lego_button.dart';
+import 'package:tk_al_muhajirin/ui/payment/payment_screen.dart';
 
 class RegisterIbuScreen extends StatefulWidget {
   const RegisterIbuScreen({Key? key}) : super(key: key);
@@ -280,13 +281,13 @@ class _RegisterIbuScreenState extends State<RegisterIbuScreen> {
                                       textButton: "Back"),
                                 ),
                                 GestureDetector(
-                                    /*onTap: (){
+                                    onTap: (){
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  RegisterIbuScreen()));
-                                    },*/
+                                                  PaymentScreen()));
+                                    },
                                     child: LegoNext(
                                       button:
                                       "assets/registrasi/green_lego_send.png",
