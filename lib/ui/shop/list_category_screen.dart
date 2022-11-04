@@ -2,6 +2,7 @@ import 'package:cool_nav/cool_nav.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tk_al_muhajirin/ui/shop/account/profile_account_screen.dart';
 
 class ListCategoryScreen extends StatefulWidget {
   const ListCategoryScreen({Key? key}) : super(key: key);
@@ -18,49 +19,20 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
     return Scaffold(
       backgroundColor: Color(0xff449849),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        actions: [Image.asset("assets/person_icon.png")],
-        title: SizedBox(
-          height: 45,
-          width: 350,
-          child: TextField(
-            decoration: InputDecoration(
-                hintText: "Pencarian",
-                prefixIcon: const Icon(Icons.search),
-                border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25)),
-                    borderSide: BorderSide(color: Colors.white70))),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            "Buku",
+            style: GoogleFonts.beVietnamPro(
+                textStyle: const TextStyle(
+                    color: Color(0xff46AD4C),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold)),
           ),
-        ),
-      ),
-      bottomNavigationBar: FlipBoxNavigationBar(
-          currentIndex: currentIndex,
-          verticalPadding: 20.0,
-          items: <FlipBoxNavigationBarItem>[
-            FlipBoxNavigationBarItem(
-              name: 'History',
-              selectedIcon: Icons.list_alt_outlined,
-              unselectedIcon: Icons.list_alt,
-              selectedBackgroundColor: Color(0xff1C96F9),
-              unselectedBackgroundColor: Colors.white,
-            ),
-            FlipBoxNavigationBarItem(
-              name: 'Home',
-              selectedIcon: Icons.home_max_outlined,
-              unselectedIcon: Icons.home_rounded,
-              selectedBackgroundColor: Color(0xff46AD4C),
-              unselectedBackgroundColor: Colors.white,
-            ),
-            FlipBoxNavigationBarItem(
-              name: 'Cart',
-              selectedIcon: Icons.shopping_cart_outlined,
-              unselectedIcon: Icons.shopping_cart,
-              selectedBackgroundColor: Color(0xffF82F40),
-              unselectedBackgroundColor: Colors.white,
-            ),
-          ]),
+          leading: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset("assets/back.png"))),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -68,20 +40,14 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
               child: Image.asset(
                 "assets/awan_atas2.png",
                 fit: BoxFit.fitWidth,
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width,
+                width: MediaQuery.of(context).size.width,
               ),
             ),
             SizedBox(
               height: 9,
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width,
+              width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Row(
@@ -98,10 +64,8 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             image: DecorationImage(
                                 fit: BoxFit.fitWidth,
-                                image:
-                                AssetImage("assets/shop/category_book.jpg")
-                            )
-                        ),
+                                image: AssetImage(
+                                    "assets/shop/category_book.jpg"))),
                         //width: MediaQuery.of(context).size.width,
                       ),
                     ),
@@ -144,10 +108,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             SizedBox(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width - 343,
+                              width: MediaQuery.of(context).size.width - 343,
                             ),
                             Container(
                               alignment: Alignment.bottomRight,
@@ -157,8 +118,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                   color: Colors.white,
                                   border: Border.all(
                                       color: Color(0xff308612), width: 2),
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
+                                  borderRadius: BorderRadius.circular(10)),
                               child: Center(
                                 child: Text(
                                   "Buy",
@@ -179,10 +139,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
               ),
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width,
+              width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Row(
@@ -199,8 +156,8 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             image: DecorationImage(
                                 fit: BoxFit.fitWidth,
-                                image:
-                                AssetImage("assets/shop/category_book.jpg"))),
+                                image: AssetImage(
+                                    "assets/shop/category_book.jpg"))),
                         //width: MediaQuery.of(context).size.width,
                       ),
                     ),
@@ -243,10 +200,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             SizedBox(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width - 343,
+                              width: MediaQuery.of(context).size.width - 343,
                             ),
                             Container(
                               alignment: Alignment.bottomRight,
@@ -256,8 +210,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                   color: Colors.white,
                                   border: Border.all(
                                       color: Color(0xff308612), width: 2),
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
+                                  borderRadius: BorderRadius.circular(10)),
                               child: Center(
                                 child: Text(
                                   "Buy",
@@ -278,10 +231,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
               ),
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width,
+              width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Row(
@@ -298,8 +248,8 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             image: DecorationImage(
                                 fit: BoxFit.fitWidth,
-                                image:
-                                AssetImage("assets/shop/category_book.jpg"))),
+                                image: AssetImage(
+                                    "assets/shop/category_book.jpg"))),
                         //width: MediaQuery.of(context).size.width,
                       ),
                     ),
@@ -342,10 +292,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             SizedBox(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width - 343,
+                              width: MediaQuery.of(context).size.width - 343,
                             ),
                             Container(
                               alignment: Alignment.bottomRight,
@@ -355,8 +302,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                   color: Colors.white,
                                   border: Border.all(
                                       color: Color(0xff308612), width: 2),
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
+                                  borderRadius: BorderRadius.circular(10)),
                               child: Center(
                                 child: Text(
                                   "Buy",
@@ -377,10 +323,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
               ),
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width,
+              width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Row(
@@ -397,8 +340,8 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             image: DecorationImage(
                                 fit: BoxFit.fitWidth,
-                                image:
-                                AssetImage("assets/shop/category_book.jpg"))),
+                                image: AssetImage(
+                                    "assets/shop/category_book.jpg"))),
                         //width: MediaQuery.of(context).size.width,
                       ),
                     ),
@@ -441,10 +384,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             SizedBox(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width - 343,
+                              width: MediaQuery.of(context).size.width - 343,
                             ),
                             Container(
                               alignment: Alignment.bottomRight,
@@ -454,8 +394,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                   color: Colors.white,
                                   border: Border.all(
                                       color: Color(0xff308612), width: 2),
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
+                                  borderRadius: BorderRadius.circular(10)),
                               child: Center(
                                 child: Text(
                                   "Buy",

@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tk_al_muhajirin/ui/shop/account/profile_account_screen.dart';
 import 'package:tk_al_muhajirin/ui/shop/cart_screen.dart';
 import 'package:tk_al_muhajirin/ui/shop/daftar_pesanan_screen.dart';
+import 'package:tk_al_muhajirin/ui/shop/list_category_screen.dart';
 
 class HomeShopScreen extends StatefulWidget {
   const HomeShopScreen({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class _HomeShopScreenState extends State<HomeShopScreen> {
               height: 9,
             ),
             SizedBox(
-              height: 1000,
+              height: 700,
               width: 370,
               child: Column(
                 children: [
@@ -105,45 +106,54 @@ class _HomeShopScreenState extends State<HomeShopScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Card(
-                        color: Colors.transparent,
-                        elevation: 7,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: 170,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
-                                  image: DecorationImage(
-                                      fit: BoxFit.fitWidth,
-                                      image: AssetImage(
-                                          "assets/shop/category_book.jpg"))),
-                              //width: MediaQuery.of(context).size.width,
-                            ),
-                            Positioned(
-                              top: 65,
-                              bottom: 65,
-                              right: 0,
-                              left: 0,
-                              child: Container(
-                                alignment: Alignment.center,
-                                color: Color(0xff505050).withOpacity(0.7),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ListCategoryScreen()));
+                        },
+                        child: Card(
+                          color: Colors.transparent,
+                          elevation: 7,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: 170,
                                 width: 170,
-                                child: Text(
-                                  "Book",
-                                  style: GoogleFonts.beVietnamPro(
-                                      textStyle: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold)),
-                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    image: DecorationImage(
+                                        fit: BoxFit.fitWidth,
+                                        image: AssetImage(
+                                            "assets/shop/category_book.jpg"))),
+                                //width: MediaQuery.of(context).size.width,
                               ),
-                            )
-                          ],
+                              Positioned(
+                                top: 65,
+                                bottom: 65,
+                                right: 0,
+                                left: 0,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  color: Color(0xff505050).withOpacity(0.7),
+                                  width: 170,
+                                  child: Text(
+                                    "Book",
+                                    style: GoogleFonts.beVietnamPro(
+                                        textStyle: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       Card(

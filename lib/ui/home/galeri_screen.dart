@@ -28,6 +28,35 @@ class _GaleriState extends State<Galeri> {
     'assets/galeri/10.jpg',
   ];
 
+  List<String> title = [
+    'Kegiatan Siswa Belajar di Kelas 0',
+    'Kegiatan Siswa Belajar di Kelas 1',
+    'Kegiatan Siswa Belajar di Kelas 2',
+    'Kegiatan Siswa Belajar di Kelas 3',
+    'Kegiatan Siswa Belajar di Kelas 4',
+    'Kegiatan Siswa Belajar di Kelas 5',
+    'Kegiatan Siswa Belajar di Kelas 6',
+    'Kegiatan Siswa Belajar di Kelas 7',
+    'Kegiatan Siswa Belajar di Kelas 8',
+    'Kegiatan Siswa Belajar di Kelas 9',
+    'Kegiatan Siswa Belajar di Kelas 10',
+  ];
+
+  List<String> desc = [
+    '0 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '1 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '2 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '3 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '4 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '5 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '6 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '7 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '8 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '9 Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+    '10Ariel sedang mengerjakan soal yang diberikan oleh ibu Nur saat pelajaran Matematika. Saat itu Ariel kesulitan mengerjakannya karena tidak mengerti dan tertidur saat pelajaran berlangsung. Namun Ibu Nur tetap mengajarkan Ariel sampai dapat menyelesaikan soalnya.',
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +103,7 @@ class _GaleriState extends State<Galeri> {
               ],
             ),
             SizedBox(
-              height: 536,
+              height: 530,
               width: 400,
               child: MasonryGridView.count(
                 crossAxisCount: 2,
@@ -93,7 +122,7 @@ class _GaleriState extends State<Galeri> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    DetailGaleriScreen(tag: index.toString())));
+                                    DetailGaleriScreen(tag: index.toString(),image: galeri[index], title: title[index], desc: desc[index])));
                       },
                     )),
                   );
