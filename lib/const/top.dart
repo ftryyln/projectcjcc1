@@ -11,15 +11,10 @@ class Search extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-          },
-          child: Image.asset(
-            "assets/logo_tk_green.png",
-            width: 50,
-            height: 50,
-          ),
+        Image.asset(
+          "assets/logo_tk_green.png",
+          width: 50,
+          height: 50,
         ),
         SizedBox(
           width: 20,

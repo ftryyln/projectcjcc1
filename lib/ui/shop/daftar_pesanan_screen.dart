@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tk_al_muhajirin/ui/shop/cart_screen.dart';
 
 class DaftarPesananScreen extends StatefulWidget {
   const DaftarPesananScreen({Key? key}) : super(key: key);
@@ -128,22 +129,32 @@ class _DaftarPesananScreenState extends State<DaftarPesananScreen> {
                                   width:
                                       MediaQuery.of(context).size.width - 355,
                                 ),
-                                Container(
-                                  alignment: Alignment.bottomRight,
-                                  height: 40,
-                                  width: 90,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(
-                                          color: Color(0xff308612), width: 2),
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Center(
-                                    child: Text(
-                                      "Beli Lagi",
-                                      style: GoogleFonts.beVietnamPro(
-                                        textStyle: const TextStyle(
-                                            color: Color(0xff308612),
-                                            fontSize: 16),
+                                GestureDetector(
+                                  onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CartScreen()));
+
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.bottomRight,
+                                    height: 40,
+                                    width: 90,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            color: Color(0xff308612), width: 2),
+                                        borderRadius: BorderRadius.circular(10)),
+                                    child: Center(
+                                      child: Text(
+                                        "Beli Lagi",
+                                        style: GoogleFonts.beVietnamPro(
+                                          textStyle: const TextStyle(
+                                              color: Color(0xff308612),
+                                              fontSize: 16),
+                                        ),
                                       ),
                                     ),
                                   ),

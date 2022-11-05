@@ -17,20 +17,24 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex = 0;
   int indexBottomNav = 0;
 
+  int indexSlider = 0;
   List<String> sliderHome = [
     'assets/tk.jpg',
     'assets/taman_bermain.jpg',
     'assets/kelas.jpg'
   ];
-
   List<String> titleEkskul = [
     'Berkuda',
     'Futsal',
   ];
 
+  int indexEkskul = 0;
+  List<String> imageEkskul = [
+    'assets/berkuda.png',
+    'assets/futsal.jpg',
+  ];
   List<String> descEkskul = [
     'Berkuda dapat meningkatkan pembelajaran, memori, pemecahan masalah, ' +
         'dan kemampuan kognitif pada anak.',
@@ -39,13 +43,12 @@ class _HomeScreenState extends State<HomeScreen> {
         'berpikir cepat',
   ];
 
-  int currentIndexFasilitas = 0;
+  int indexFasilitas = 0;
   List<String> sliderFasilitas = [
     'assets/taman_bermain.jpg',
     'assets/lapangan_futsal.jpg',
     'assets/computer_room.jpg',
   ];
-
   List<String> fasilitas = [
     'Taman Bermain',
     'Lapangan Futsal',
@@ -155,7 +158,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.zero,
                 child: CarouselSlider(
                   options: CarouselOptions(
-                      height: 200.0, autoPlay: true, viewportFraction: 1),
+                      height: 200.0,
+                      autoPlay: true,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          indexSlider = index;
+                        });
+                      },
+                      viewportFraction: 1),
                   items: sliderHome.map((i) {
                     return Builder(
                       builder: (BuildContext context) {
@@ -180,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               CarouselIndicator(
                 count: sliderHome.length,
-                index: currentIndex,
+                index: indexSlider,
                 color: Colors.grey,
                 activeColor: Color(0xff1C96F9),
               ),
@@ -346,14 +356,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                           autoPlay: true,
                                           onPageChanged: (index, reason) {
                                             setState(() {
-                                              currentIndex = index;
+                                              indexEkskul = index;
                                             });
                                           },
                                           viewportFraction: 1),
-                                      items: [
-                                        'assets/berkuda.png',
-                                        'assets/futsal.jpg',
-                                      ].map((i) {
+                                      items: imageEkskul.map((i) {
                                         return Builder(
                                           builder: (BuildContext context) {
                                             return Container(
@@ -387,7 +394,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       padding: const EdgeInsets.only(
                                           left: 16, right: 16),
                                       alignment: Alignment.centerLeft,
-                                      child: Text(titleEkskul[currentIndex],
+                                      child: Text(titleEkskul[indexEkskul],
                                           style: GoogleFonts.beVietnamPro(
                                               textStyle: const TextStyle(
                                                   color: Colors.black,
@@ -399,7 +406,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       margin: const EdgeInsets.only(top: 15),
                                       padding: const EdgeInsets.only(
                                           left: 16, right: 16),
-                                      child: Text(descEkskul[currentIndex],
+                                      child: Text(descEkskul[indexEkskul],
                                           style: GoogleFonts.beVietnamPro(
                                               textStyle: const TextStyle(
                                                   color: Colors.black,
@@ -470,7 +477,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   autoPlay: true,
                                   onPageChanged: (indexF, reason) {
                                     setState(() {
-                                      currentIndexFasilitas = indexF;
+                                      indexFasilitas = indexF;
                                     });
                                   },
                                   viewportFraction: 1),
@@ -503,7 +510,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             CarouselIndicator(
                               count: sliderHome.length,
-                              index: currentIndexFasilitas,
+                              index: indexFasilitas,
                               color: Colors.white,
                               activeColor: Color(0xff1C96F9),
                             ),
@@ -514,7 +521,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               alignment: Alignment.centerLeft,
                               child: Center(
                                 child: Text(
-                                  fasilitas[currentIndex],
+                                  fasilitas[indexFasilitas],
                                   style: GoogleFonts.beVietnamPro(
                                     textStyle: TextStyle(
                                         shadows: [

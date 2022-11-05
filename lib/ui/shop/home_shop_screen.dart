@@ -38,53 +38,26 @@ class _HomeShopScreenState extends State<HomeShopScreen> {
                 width: MediaQuery.of(context).size.width,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 9,
             ),
             SizedBox(
-              height: 700,
+              height: MediaQuery.of(context).size.height,
               width: 370,
               child: Column(
                 children: [
-                  Card(
-                    color: Colors.transparent,
-                    elevation: 6,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Stack(children: [
-                      CarouselSlider(
-                        options: CarouselOptions(
-                            clipBehavior: Clip.none,
-                            height: 160,
-                            autoPlay: true,
-                            viewportFraction: 1),
-                        items: sliderHomeShop.map((i) {
-                          return Builder(
-                            builder: (BuildContext context) {
-                              return Container(
-                                height: 200,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                    image: DecorationImage(
-                                        fit: BoxFit.fitWidth,
-                                        image: AssetImage(i))),
-                                width: MediaQuery.of(context).size.width,
-                              );
-                            },
-                          );
-                        }).toList(),
-                      ),
-                      Positioned(
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        child: Container(
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    
+                    child: Column(
+                      children: [
+                        Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10)),
-                            color: Color(0xff505050).withOpacity(0.7),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
                           ),
                           alignment: Alignment.center,
                           height: 40,
@@ -92,13 +65,42 @@ class _HomeShopScreenState extends State<HomeShopScreen> {
                             "Best Seller",
                             style: GoogleFonts.beVietnamPro(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xff449849),
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold)),
                           ),
                         ),
-                      ),
-                    ]),
+                        Card(
+                          color: Colors.transparent,
+                          elevation: 6,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: CarouselSlider(
+                            options: CarouselOptions(
+                                clipBehavior: Clip.none,
+                                height: 160,
+                                autoPlay: true,
+                                viewportFraction: 1),
+                            items: sliderHomeShop.map((i) {
+                              return Builder(
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.all(Radius.circular(10)),
+                                        image: DecorationImage(
+                                            fit: BoxFit.fitWidth,
+                                            image: AssetImage(i))),
+                                    width: MediaQuery.of(context).size.width,
+                                  );
+                                },
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 20,

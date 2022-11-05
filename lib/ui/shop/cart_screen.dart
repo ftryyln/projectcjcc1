@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tk_al_muhajirin/ui/shop/home_shop_screen.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -25,18 +26,29 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       backgroundColor: const Color(0xff449849),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        title: Text(
-          "Keranjang",
-          style: GoogleFonts.beVietnamPro(
-              textStyle: const TextStyle(
-                  color: Color(0xff46AD4C),
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold)),
-        ),
-      ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            "Keranjang",
+            style: GoogleFonts.beVietnamPro(
+                textStyle: const TextStyle(
+                    color: Color(0xff46AD4C),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold)),
+          ),
+          leading: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeShopScreen()));
+              },
+              child: SvgPicture.asset(
+                "assets/payment/icon_close_green.svg",
+              ),
+            ),
+          )),
       body: SingleChildScrollView(
         child: Column(
           children: [
