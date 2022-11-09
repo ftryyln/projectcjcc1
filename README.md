@@ -1,4 +1,4 @@
-# ProjectCJCC
+# Project CJCC - TK Al-Muhajirin App
 
 Demonstrasi implementasi konsep dan desain UI/UX dari projek yang diberikan oleh Pengajar.
 

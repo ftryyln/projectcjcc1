@@ -41,12 +41,23 @@ class _ProfileAccountScreenState extends State<ProfileAccountScreen> {
           ),
           Column(
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Container(
-                  child: SvgPicture.asset(
-                "assets/shop/account/icon_person.svg",
-                height: 180,
-                width: 180,
-              )),
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Color(0xff1C96F9), width: 3),
+                    color: Color(0xff1C96F9),
+                    image: DecorationImage(
+                      image: AssetImage("assets/struktur/wakasek.jpg"),
+                    )),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Text(
                 "Wanda Fauzi",
                 style: GoogleFonts.beVietnamPro(
@@ -62,7 +73,7 @@ class _ProfileAccountScreenState extends State<ProfileAccountScreen> {
                         color: Color(0xff1C96F9), fontSize: 14)),
               ),
               SizedBox(
-                height: 20,
+                height: 50,
               ),
               TextButton(
                   style: ElevatedButton.styleFrom(

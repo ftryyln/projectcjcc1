@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tk_al_muhajirin/data/model/login_model.dart';
+import 'package:tk_al_muhajirin/data/network_core.dart';
 import 'package:tk_al_muhajirin/ui/login/forgot_password_screen.dart';
 import 'package:tk_al_muhajirin/ui/shop/home_shop_screen.dart';
 
@@ -17,6 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   final controllerEmail = TextEditingController();
   final controllerPassword = TextEditingController();
+
+  LoginModel? model;
 
   @override
   Widget build(BuildContext context) {
@@ -246,9 +251,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 border: Border.all(color: Color(0xff308612)),
                                 borderRadius: BorderRadius.circular(14)),
                             child: TextButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 final form = formKey.currentState;
                                 if (form!.validate()) {
+                                  _doLogin();
+                                  final storage = FlutterSecureStorage();
+                                  await storage.write(key: "token", value: model?.data?.token);
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
@@ -283,5 +291,21 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+
+
+  Future _doLogin() async {
+    try {
+      var res = await NetworkCore().dio.post("api/login", data: {
+        "email": controllerEmail.text,
+        "password": controllerPassword.text
+      });
+      setState(() {
+        model = LoginModel.fromJson(res.data);
+      });
+    } catch (e) {
+      return [];
+    }
   }
 }
